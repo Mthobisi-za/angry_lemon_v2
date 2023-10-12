@@ -1,3 +1,3 @@
 window.env = {
-  "API_KEY": "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"
+  "API_KEY": "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"
 };

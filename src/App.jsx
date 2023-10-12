@@ -11,7 +11,7 @@ function App() {
     apiKey: env.API_KEY,
     dangerouslyAllowBrowser: true
 });
-  const [slider_val, setSlider_val] = useState(1);
+  const [slider_val, setSlider_val] = useState(18.5);
   const [tone, Settone]= useState('All Businesses');
   const [style, SetStyle] = useState(null);
   const [textBox, SetTextBox] = useState(null);
@@ -51,14 +51,14 @@ function App() {
   let keep_track_of_value = (val)=>{
     var each_object = 100/4;
     if(each_object >= Number(val)){
-      Settone('All Businesses');
+      Settone('Formal');
     }else if((each_object*2) >= Number(val)){
-      Settone('Private School Educated');
+      Settone('Preppy');
     }else if((each_object*3) >= Number(val)){
-      Settone('Friends and Family');
+      Settone('Friendly');
     }
     else if((each_object*4) >= Number(val)){
-      Settone('Tjomma style');
+      Settone('Best friend');
     }
     console.log(tone)
   }
@@ -86,7 +86,7 @@ function App() {
     }
     let validate_Data = ()=>{
       if(tone && style && textBox){
-        str = `de-angryfy this statement, the statement must be in a ${tone}, It must also be in a professional level of a ${style} but make the sentence to be a statement  : ${textBox}`
+        str = `Please remove the anger from this statement, ${textBox}, the statement must be in a ${tone} tone, and please format the response for a ${style}`
         make_Api_call();
       }
     }
@@ -115,41 +115,53 @@ console.log(data);
               <div className="slider_container">
                 <div className="top_slider">
                   <div className="first_icon icon_holder">
+                    <div className="labe_icon_container">
+                      <p className="text_label">Formal</p>
+                    </div>
                     <img src={require('./icons/all_business.png')} alt="" className='icon first_large_icon' />
                     <div className="line"></div>
                   </div>
                   <div className="second_icon icon_holder">
+                  <div className="labe_icon_container">
+                      <p className="text_label">Preppy</p>
+                    </div>
                     <img src={require('./icons/private_school_educated.png')} alt="" className='icon' />
                     <div className="line"></div>
                   </div>
                   <div className="third_icon icon_holder">
+                  <div className="labe_icon_container">
+                      <p className="text_label">Friendly</p>
+                    </div>
                     <img src={require('./icons/friends_and_family.png')} alt="" className='icon' />
                     <div className="line"></div>
                   </div>
                   <div className="fourth_icon icon_holder">
+                  <div className="labe_icon_container">
+                      <p className="text_label">Best friend</p>
+                    </div>
                     <img src={require('./icons/Tjomma_style.png')} alt="" className='icon' />
                     <div className="line"></div>
                   </div>
                 </div>
-                <input type="range" min="1" max="100" value={slider_val} onChange={(e)=>{setSlider_val(e.target.value);change_slider_icon(e.target.value);keep_track_of_value(e.target.value)}} className='slider'/>
+                <input type="range" step={18.5} min="1" max={100} value={slider_val} onChange={(e)=>{setSlider_val(e.target.value);change_slider_icon(e.target.value);keep_track_of_value(e.target.value)}} className='slider'/>
               </div>
               <div className="radio_content">
               <fieldset className="radioGroup" onChange={(e)=>{SetStyle(e.target.value)}}>
                 {/* <legend>Skill Level</legend> */}
                 <label htmlFor="neverPlayedRadioButton">
-                    <input type="radio" name="skill" value="formal letter" id="neverPlayedRadioButton" className='radio' />
+                    <input type="radio" name="skill" value="Formal letter" id="neverPlayedRadioButton" className='radio' />
                     <img src={require('./icons/formal_letter.png')} />
                 </label>
                 <label htmlFor="unorganizedPickupRadioButton">
-                        <input type="radio" name="skill" value="email" id="unorganizedPickupRadioButton" className='radio'/>
+                        <input type="radio" name="skill" value="Email" id="unorganizedPickupRadioButton" className='radio'/>
                         <img src={require('./icons/email.png')} />
                 </label>
                 <label htmlFor="organizedPickupRadioButton">
-                    <input type="radio" name="skill" value="socials" id="organizedPickupRadioButton" className='radio'/>
+                    <input type="radio" name="skill" value="Social media post" id="organizedPickupRadioButton" className='radio'/>
                     <img src={require('./icons/socials.png')} />
                 </label>
                 <label htmlFor="organizedPickupRadioButton">
-                    <input type="radio" name="skill" value="text" id="organizedPickupRadioButton" className='radio'/>
+                    <input type="radio" name="skill" value="Text message" id="organizedPickupRadioButton" className='radio'/>
                     <img src={require('./icons/text.png')} />
                 </label>
             </fieldset>
