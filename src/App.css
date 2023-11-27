@@ -35,6 +35,10 @@
     width: 100%;
 }
 
+.slider_holder {
+    width: 100%;
+}
+
 .slider {
     -webkit-appearance: none;
     width: 100%;
@@ -45,7 +49,7 @@
     -webkit-transition: .2s;
     transition: opacity .2s;
     border-radius: 43px;
-    background: #195030;
+    background: #F3D232;
     /* accent-color: #F55050; */
 }
 
@@ -85,8 +89,8 @@
 }
 
 .icon {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     transition: transform 0.5s
 }
 
@@ -94,7 +98,7 @@
     min-width: 1px;
     max-width: 1px;
     min-height: 16px;
-    background: #195030;
+    background: #FFF;
 }
 
 .icon_holder {
@@ -301,3 +305,104 @@ label {
 
 
 /* chats */
+
+
+/* new styles */
+
+:root {
+    --yellow: #F3D232;
+    --green: #004713;
+}
+
+@font-face {
+    font-family: Cartonnage OT;
+    src: url('./Cartonnage\ OT.ttf');
+}
+
+p,
+h1 {
+    font-family: 'Cartonnage OT', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Cartonnage OT', sans-serif;
+    background-color: var(--yellow);
+}
+
+.grid {
+    display: grid;
+}
+
+.full_container {
+    width: 100%;
+    margin: auto;
+}
+
+.templ_3 {
+    grid-template-columns: 33% 33% 33%;
+}
+
+.templ_7 {
+    grid-template-columns: 20% 6% 20% 6% 20% 6% 20%;
+    justify-content: space-evenly;
+}
+
+.top_container {
+    background-color: var(--green);
+    align-items: normal;
+    justify-content: space-evenly;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+.small_title {
+    color: var(--yellow);
+    text-align: center;
+    font-family: inherit;
+    font-size: 20px;
+    line-height: 10%;
+}
+
+.title_image {
+    max-width: 100%;
+}
+
+.column {
+    text-align: center;
+}
+
+.column {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+.style_title {
+    color: var(--yellow);
+    font-size: 18px;
+    text-align: center;
+}
+
+.templ_7 .column {
+    text-align: center;
+}
+
+.style {
+    max-width: 100%;
+}
+
+.star_column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.star_column img {
+    width: 100%;
+}
+
+
+/* new styles */
