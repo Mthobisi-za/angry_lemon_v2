@@ -324,13 +324,6 @@ h1 {
     font-family: 'Cartonnage OT', sans-serif;
 }
 
-body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Cartonnage OT', sans-serif;
-    background-color: var(--yellow);
-}
-
 .grid {
     display: grid;
 }
@@ -341,12 +334,13 @@ body {
 }
 
 .templ_3 {
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 40% 20% 40%;
 }
 
 .templ_7 {
     grid-template-columns: 20% 6% 20% 6% 20% 6% 20%;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .top_container {
@@ -376,7 +370,7 @@ body {
 .column {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: space-evenly;
     flex-direction: column;
 }
 

@@ -209,7 +209,7 @@ console.log(data);
                       
                   </div>
                   <div className="slider_holder">
-                  <input type="range" step={25} min="1" max={80} value={slider_val} onChange={(e)=>{setSlider_val(e.target.value);change_slider_icon(e.target.value);keep_track_of_value(e.target.value)}} className='slider'/>
+                  <input type="range" step={25} min="0" max={100} value={slider_val} onChange={(e)=>{setSlider_val(e.target.value);change_slider_icon(e.target.value);keep_track_of_value(e.target.value)}} className='slider'/>
                   </div>
               </div>
               <div class="column ">
